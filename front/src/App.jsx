@@ -4,31 +4,31 @@ import logo from "./assets/dvk.jpg";
 function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-slate-900 to-black text-white">
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         
         {/* Header */}
-        <header className="text-center mb-12">
+        <header className="text-center mb-8 sm:mb-12">
           <img
             src={logo}
             alt="DVK Logo"
-            className="h-20 mx-auto mb-6 rounded-lg shadow-lg"
+            className="h-16 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-lg shadow-lg"
           />
           
-          <h1 className="text-5xl sm:text-6xl font-light mb-4 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-3 sm:mb-4 tracking-tight">
             Label Extractor
           </h1>
           
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto font-light">
-            Extract structured pharmaceutical information from labels 
+          <p className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto font-light px-4">
+            Extract structured pharmaceutical information from labels using AI
           </p>
         </header>
 
         {/* Features Tags */}
-        <div className="flex gap-3 justify-center flex-wrap mb-12">
+        <div className="flex gap-2 sm:gap-3 justify-center flex-wrap mb-8 sm:mb-12 px-4">
           {["PDF Support", "Image Processing", "In-Memory", "Gemini Vision"].map((tag) => (
             <span
               key={tag}
-              className="bg-white/5 border border-white/10 px-4 py-2 rounded-lg text-sm text-slate-200"
+              className="bg-white/5 border border-white/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm text-slate-200"
             >
               {tag}
             </span>
@@ -39,8 +39,8 @@ function App() {
         <ImageUpload />
 
         {/* Footer */}
-        <footer className="text-center mt-16 text-slate-400 text-sm">
-          <p>Powered by DVK pvt Ltd.</p>
+        <footer className="text-center mt-12 sm:mt-16 text-slate-400 text-xs sm:text-sm px-4">
+          <p>Powered by DVK pvt ltd.</p>
         </footer>
         
       </div>

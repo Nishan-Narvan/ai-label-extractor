@@ -92,7 +92,7 @@ function ImageUpload() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-6xl mx-auto w-full px-4 py-8">
       {/* Upload Section */}
       <div className="bg-white/5 border border-white/10 rounded-xl p-8 mb-8">
         <h2 className="text-2xl font-medium mb-6 text-amber-400">
@@ -275,7 +275,7 @@ function ImageUpload() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   {/* Composition */}
                   <div className="p-4 bg-white/5 rounded-lg border border-white/10">
                     <p className="text-xs text-slate-400 uppercase tracking-wide mb-2">
