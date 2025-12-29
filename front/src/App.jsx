@@ -3,8 +3,9 @@ import logo from "./assets/dvk.jpg";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-slate-900 to-black text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div className="min-h-screen bg-gradient-to-r from-black via-slate-900 to-black text-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 min-h-screen flex flex-col">
+
         
         {/* Header */}
         <header className="text-center mb-8 sm:mb-12">
