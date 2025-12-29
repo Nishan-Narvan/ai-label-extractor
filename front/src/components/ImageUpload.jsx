@@ -79,12 +79,10 @@ function ImageUpload() {
     setError("");
   };
 
-  return (
-    {/* 🔑 Width-stable parent */}
-    <div className="w-full overflow-x-hidden">
-      <div className="max-w-6xl mx-auto w-full px-4 py-8">
+ return (
+  <div className="w-full overflow-x-hidden">
+    <div className="max-w-6xl mx-auto w-full px-4 py-8">
 
-        {/* Upload Section */}
         <div className="bg-white/5 border border-white/10 rounded-xl p-6 sm:p-8 mb-8">
           <h2 className="text-2xl font-medium mb-6 text-amber-400">
             Upload Label
@@ -142,7 +140,7 @@ function ImageUpload() {
           )}
         </div>
 
-        {/* Results Section */}
+       
         <div className="bg-black/40 border border-white/10 rounded-xl p-6 sm:p-8 overflow-x-auto">
           <h2 className="text-2xl font-medium mb-6 text-amber-400">
             Extracted Information
