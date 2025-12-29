@@ -60,7 +60,10 @@ function ImageUpload() {
       setLoading(true);
       setError("");
 
-      const API_URL = import.meta.env.VITE_API_URL || "https://ai-label-extractor-back.vercel.app";
+     const API_URL =
+  import.meta.env.VITE_API_URL ||
+  "https://ai-label-extractor-back.vercel.app";
+
 
       const response = await fetch(`${API_URL}/api/extract`, {
         method: "POST",
