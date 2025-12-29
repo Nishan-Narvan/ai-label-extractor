@@ -15,7 +15,15 @@ const PORT = process.env.PORT || 5000;
 // =====================
 
 // CORS - Allow frontend to access API
-app.use(cors()); // ✅ Allow all origins (prototype mode)
+app.use(cors({
+  origin: ['https://ai-label-extractor-frontend.vercel.app', 'http://localhost:5173'],
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
+
+// Handle preflight OPTIONS requests
+app.options('*', cors());
 
 // Parse JSON bodies
 app.use(express.json());
@@ -114,32 +122,28 @@ app.use((error, req, res, next) => {
 // Start Server
 // =====================
 
-
-
-
-
 // Export for Vercel serverless
 export default app;
 
 // Only listen in development (not on Vercel)
 if (process.env.NODE_ENV !== 'production') {
   app.listen(PORT, () => {
-  console.log('\n🚀 ===================================');
-  console.log(`   Label Extractor API Server`);
-  console.log('   ===================================');
-  console.log(`   📡 Server running on port ${PORT}`);
-  console.log(`   🌐 URL: http://localhost:${PORT}`);
-  console.log(`   📝 API Endpoint: http://localhost:${PORT}/api/extract`);
-  console.log(`   ❤️  Health Check: http://localhost:${PORT}/api/health`);
-  console.log('   ===================================\n');
-  
-  // Check API key
-  if (!process.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY === 'your_gemini_api_key_here') {
-    console.warn('⚠️  WARNING: GEMINI_API_KEY not configured!');
-    console.warn('   Get your API key from: https://aistudio.google.com/apikey');
-    console.warn('   Add it to the .env file\n');
-  } else {
-    console.log('✅ Gemini API Key configured\n');
-  }
-});
+    console.log('\n🚀 ===================================');
+    console.log('   Label Extractor API Server');
+    console.log('   ===================================');
+    console.log(`   📡 Server running on port ${PORT}`);
+    console.log(`   🌐 URL: http://localhost:${PORT}`);
+    console.log(`   📝 API Endpoint: http://localhost:${PORT}/api/extract`);
+    console.log(`   ❤️  Health Check: http://localhost:${PORT}/api/health`);
+    console.log('   ===================================\n');
+    
+    // Check API key
+    if (!process.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY === 'your_gemini_api_key_here') {
+      console.warn('⚠️  WARNING: GEMINI_API_KEY not configured!');
+      console.warn('   Get your API key from: https://aistudio.google.com/apikey');
+      console.warn('   Add it to the .env file\n');
+    } else {
+      console.log('✅ Gemini API Key configured\n');
+    }
+  });
 }
